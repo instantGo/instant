@@ -1,3 +1,4 @@
+// Importamos la clase Controller desde Stimulus
 import { Controller } from '@hotwired/stimulus'
 
 // Exportamos la clase por defecto para que Stimulus pueda registrarla
@@ -28,7 +29,7 @@ export default class extends Controller {
       error: 'Error al copiar',
       livesuccess: 'Texto copiado al portapapeles',
       liveerror: 'Error al copiar el texto',
-      ariaLabel: 'Copiar al portapapeles'
+      arialabel: 'Copiar al portapapeles'
     },
     en: {
       button: 'Copy',
@@ -36,7 +37,7 @@ export default class extends Controller {
       error: 'Copy failed',
       livesuccess: 'Text copied to clipboard',
       liveerror: 'Failed to copy text',
-      ariaLabel: 'Copy to clipboard'
+      arialabel: 'Copy to clipboard'
     }
   }
 
@@ -186,7 +187,7 @@ export default class extends Controller {
 
     const t = this.translations[this.lang] || this.defaultTranslations.es
     if (this.ariaLabelEnabledValue) {
-      this.buttonTarget.setAttribute('aria-label', t.ariaLabel)
+      this.buttonTarget.setAttribute('aria-label', t.arialabel)
     } else {
       // Si no está habilitado, eliminamos el atributo por si acaso
       this.buttonTarget.removeAttribute('aria-label')
@@ -274,4 +275,4 @@ export default class extends Controller {
       this.timeoutId = null
     }, 2000)
   }
-      }
+        }
